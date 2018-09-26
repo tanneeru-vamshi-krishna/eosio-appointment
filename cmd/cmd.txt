@@ -1,0 +1,1 @@
+sudo cleos wallet unlock -n game --password PW5HzHqBtuistZszGvNCkTSQfW6kdnhCQ9YtBH47h3Q4qjzjA5k2c
