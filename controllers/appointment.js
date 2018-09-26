@@ -34,14 +34,6 @@ class Appointment {
     }
 }
 
-    get() 
-    {
-
-    }
-    getById() 
-    {
-
-    }
     updateById() 
     {
         eos.transaction({
