@@ -33,6 +33,17 @@ class Appointment {
         })
     }
 
+<<<<<<< HEAD
+    get(){
+    {
+
+    }
+    getById() 
+    {
+
+    }
+=======
+>>>>>>> 7d2cedf3bf87bc951caced7dd148eb15212b96bb
     updateById() 
     {
         eos.transaction({
@@ -90,6 +101,10 @@ class Appointment {
 
     }
 
+<<<<<<< HEAD
 }
 
 module.exports = Appointment
+=======
+module.exports = Appointment
+>>>>>>> b8c9027b79235d8d11579cd4f5ac10ba0e0bf6e6
