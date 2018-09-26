@@ -32,7 +32,6 @@ class Appointment {
             return res.json(err)
         })
     }
-}
 
     updateById() 
     {
@@ -90,5 +89,7 @@ class Appointment {
         })
 
     }
+
+}
 
 module.exports = Appointment
