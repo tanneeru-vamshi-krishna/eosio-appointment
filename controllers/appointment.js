@@ -32,9 +32,8 @@ class Appointment {
             return res.json(err)
         })
     }
-}
 
-    get() 
+    get(){
     {
 
     }
