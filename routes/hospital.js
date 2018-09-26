@@ -5,8 +5,8 @@ const hospital = new Hospital();
 
 
 router.post('/', hospital.hosp);
-router.get('/', hospital.get);
-router.get('/:id', hospital.getDataById);
+router.post('/', hospital.get);
+router.post('/', hospital.getDataById);
 router.post('/', hospital.updateById);
 router.post('/', hospital.deleteById);
 

@@ -33,6 +33,7 @@ class Appointment {
         })
     }
 
+<<<<<<< HEAD
     get(){
     {
 
@@ -41,6 +42,8 @@ class Appointment {
     {
 
     }
+=======
+>>>>>>> 7d2cedf3bf87bc951caced7dd148eb15212b96bb
     updateById() 
     {
         eos.transaction({

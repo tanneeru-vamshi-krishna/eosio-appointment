@@ -5,8 +5,8 @@ const appointment = new Appointment();
 
 
 router.post('/', appointment.createapp);
-router.get('/', appointment.get);
-router.get('/:id', appointment.getDataById);
+router.post('/', appointment.get);
+router.post('/', appointment.getDataById);
 router.post('/', appointment.updateById);
 router.post('/', appointment.deleteById);
 
