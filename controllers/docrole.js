@@ -7,7 +7,7 @@ class Docrole {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "adddoctor",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -30,12 +30,7 @@ class Docrole {
             return res.json(err)
         })
     }
-}
 
-    get() 
-    {
-
-    }
     getById() 
     {
 
@@ -45,7 +40,7 @@ class Docrole {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "addpatient",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -74,7 +69,7 @@ class Docrole {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "addtimeslot",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -104,7 +99,7 @@ class Docrole {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "assigndoc",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -129,5 +124,6 @@ class Docrole {
         })
 
     }
+}
 
 module.exports = Docrole

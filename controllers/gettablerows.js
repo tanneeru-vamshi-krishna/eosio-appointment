@@ -6,7 +6,7 @@ class Get_table_rows {
         eos.getTableRows({
             scope: req.body.scope,
             code: req.body.code,
-            table: rqeq.body.table,
+            table: req.body.table,
             json: true
         }, (error, data) => {
             return res.json({

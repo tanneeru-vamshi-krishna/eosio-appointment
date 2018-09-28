@@ -5,10 +5,8 @@ const appointment = new Appointment();
 
 
 router.post('/', appointment.createapp);
-router.post('/', appointment.get);
-router.post('/', appointment.getDataById);
-router.post('/', appointment.updateById);
-router.post('/', appointment.deleteById);
+router.post('/', appointment.cancelapp);
+router.post('/', appointment.endapp);
 
 
 module.exports = router;

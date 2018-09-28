@@ -5,8 +5,8 @@ const docrole = new Docrole();
 
 
 router.post('/', docrole.docrole);
-router.post('/', docrole.get);
-router.post('/', docrole.getDataById);
+//router.post('/', docrole.get);
+//router.post('/', docrole.getDataById);
 router.post('/', docrole.updateById);
 router.post('/', docrole.getDataById);
 router.post('/', docrole.deleteById);

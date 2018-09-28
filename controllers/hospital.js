@@ -7,7 +7,7 @@ class Hospital {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "createrole",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -29,12 +29,7 @@ class Hospital {
             return res.json(err)
         })
     }
-}
 
-    get() 
-    {
-
-    }
     getById() 
     {
 
@@ -44,7 +39,7 @@ class Hospital {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "createhosp",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -76,7 +71,7 @@ class Hospital {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "deletehosp",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -97,5 +92,7 @@ class Hospital {
         })
 
     }
+
+}
 
 module.exports = Hospital

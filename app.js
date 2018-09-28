@@ -33,7 +33,7 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/public/home.html'))
+    res.sendFile(path.join(__dirname + '/public/index.html'))
 })
 
 //app.get('/thread', (req, res) => {

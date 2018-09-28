@@ -7,7 +7,7 @@ class Appointment {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "createapp",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -33,23 +33,12 @@ class Appointment {
         })
     }
 
-<<<<<<< HEAD
-    get(){
-    {
+    cancelapp(req, res) {
 
-    }
-    getById() 
-    {
-
-    }
-=======
->>>>>>> 7d2cedf3bf87bc951caced7dd148eb15212b96bb
-    updateById() 
-    {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "cancelapp",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -70,16 +59,13 @@ class Appointment {
         })
 
     }
-    getDataById()
-    {
-    }
+   
+    endapp(req, res) {
 
-    deleteById() 
-    {
         eos.transaction({
             actions: [{
                 account: req.body.account,
-                name: "endapp",
+                name: req.body.name,
                 authorization: [{
                     actor: req.body.actor,
                     permission: "active"
@@ -100,11 +86,9 @@ class Appointment {
         })
 
     }
-
-<<<<<<< HEAD
 }
 
 module.exports = Appointment
-=======
-module.exports = Appointment
->>>>>>> b8c9027b79235d8d11579cd4f5ac10ba0e0bf6e6
+
+
+
