@@ -26,8 +26,8 @@ void UISappoint::createapp (account_name created_by,
                             string       appointment_ID_str,
                             uint64_t     start_time,
                             uint64_t     end_time,
-                            uint32_t     doc_mobile_number,
-                            uint32_t     patient_mobile_number){
+                            uint64_t     doc_mobile_number,
+                            uint64_t     patient_mobile_number){
 
     require_auth(created_by);
 

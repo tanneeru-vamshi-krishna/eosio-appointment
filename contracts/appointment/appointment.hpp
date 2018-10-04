@@ -25,8 +25,8 @@ class UISappoint:public contract{
                         string        appointment_ID_str,
                         uint64_t      start_time,
                         uint64_t      end_time,
-                        uint32_t      doc_mobile_number,
-                        uint32_t      patient_mobile_number);
+                        uint64_t      doc_mobile_number,
+                        uint64_t      patient_mobile_number);
 
         //@abi action
         // std::string getapp (string appointment_ID_str);
@@ -62,8 +62,8 @@ class UISappoint:public contract{
             uint64_t     cancelled_at;
             account_name completed_by;
             uint64_t     completed_at;
-            uint32_t     doc_mobile_number;
-            uint32_t     patient_mobile_number; 
+            uint64_t     doc_mobile_number;
+            uint64_t     patient_mobile_number; 
 
             uint64_t primary_key() const {return appointment_ID;}
 

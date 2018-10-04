@@ -19,7 +19,8 @@ class Adddoctor {
                     doctor_ID_str: req.body.doctor_ID_str,
                     aadhaar_str: req.body.aadhaar_str,
                     doctor_name: req.body.doctor_name,
-                    category: req.body.category
+                    category: req.body.category,
+		    doc_mobile_number: req.body.doc_mobile_number
 
             }
         }],

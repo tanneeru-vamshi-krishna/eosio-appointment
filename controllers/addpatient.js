@@ -17,7 +17,7 @@ class Addpatient {
                     created_by: req.body.created_by,
                     created_at: req.body.created_at,
                     aadhaar_str: req.body.aadhaar_str,
-                    mobile_number: req.body.mobile_number,
+                    patient_mobile_number: req.body.patient_mobile_number,
                     patient_name: req.body.patient_name
 
             }
