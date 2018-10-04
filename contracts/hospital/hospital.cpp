@@ -20,7 +20,7 @@ void UISHospital::createrole(string       hospital_ID_str,
                              string       role_name,
                              string       role_ID_str,
                              account_name created_by,
-                             uint64_t       created_at){
+                             uint64_t     created_at){
     require_auth(created_by);
 
     uint64_t hospital_ID = stringToHash(hospital_ID_str);
@@ -111,7 +111,6 @@ void UISHospital::deletehosp(string  hospital_ID_str,
 }
 
                                
-
 
 
 

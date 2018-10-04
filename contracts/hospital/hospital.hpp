@@ -55,7 +55,7 @@ class UISHospital:public contract {
         /// @abi table hospital i64
         struct hospital{
             account_name  created_by;
-            uint64_t        created_at;
+            uint64_t      created_at;
             string        hospital_name;
             string        hospital_ID_str;
             uint64_t      hospital_ID;
@@ -76,3 +76,5 @@ class UISHospital:public contract {
 
 EOSIO_ABI(UISHospital,  (createrole) (createhosp) (deletehosp))
 
+//  
+// 

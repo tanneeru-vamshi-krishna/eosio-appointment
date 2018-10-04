@@ -19,13 +19,15 @@ uint64_t UISappoint::stringToHash(string str){
 }
 
 void UISappoint::createapp (account_name created_by,
-                            uint64_t  created_at,
-                            string  aadhaar_str,
-                            string  doctor_ID_str,
-                            string  hospital_ID_str,
-                            string appointment_ID_str,
-                            uint64_t start_time,
-                            uint64_t end_time){
+                            uint64_t     created_at,
+                            string       aadhaar_str,
+                            string       doctor_ID_str,
+                            string       hospital_ID_str,
+                            string       appointment_ID_str,
+                            uint64_t     start_time,
+                            uint64_t     end_time,
+                            uint32_t     doc_mobile_number,
+                            uint32_t     patient_mobile_number){
 
     require_auth(created_by);
 
@@ -53,7 +55,9 @@ void UISappoint::createapp (account_name created_by,
         t.end_time  = end_time;
         t.patient_ID = aadhaar;
         t.patient_ID_str = aadhaar_str;
-        t.status="1";
+        t.status=0;
+        t.doc_mobile_number = doc_mobile_number;
+        t.patient_mobile_number = patient_mobile_number;
     });
     print(appointment_ID,"  appointment is created");    
 }          
@@ -76,7 +80,7 @@ void UISappoint::cancelapp(string appointment_ID_str,
     uishospapp.modify(itr,cancelled_by,  [&](auto& t){
         t.cancelled_by = cancelled_by;
         t.cancelled_at = cancelled_at;
-        t.status="-1";
+        t.status=-1;
     });
 
     print (appointment_ID, "appointment cancelled");
@@ -84,9 +88,9 @@ void UISappoint::cancelapp(string appointment_ID_str,
 
 
 void UISappoint::endapp(string appointment_ID_str,
-                        account_name terminated_by,
-                        uint64_t     terminated_at){
-    require_auth(terminated_by);
+                        account_name completed_by,
+                        uint64_t     completed_at){
+    require_auth(completed_by);
 
     uint64_t appointment_ID = stringToHash(appointment_ID_str);
 
@@ -96,10 +100,10 @@ void UISappoint::endapp(string appointment_ID_str,
 
     eosio_assert(itr != uishospapp.end(), "appointment doesn't exsists");
 
-    uishospapp.modify(itr,terminated_by,  [&](auto& t){
-        t.terminated_by = terminated_by;
-        t.terminated_at = terminated_at;
-        t.status="0";
+    uishospapp.modify(itr,completed_by,  [&](auto& t){
+        t.completed_by = completed_by;
+        t.completed_at = completed_at;
+        t.status=1;
     });
 
     print(appointment_ID, "appointment completed");
