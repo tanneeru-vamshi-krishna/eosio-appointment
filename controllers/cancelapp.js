@@ -18,7 +18,7 @@ class Cancelapp {
                     appointment_ID_str: req.body.appointment_ID_str,
                     cancelled_by: req.body.cancelled_by,
                     cancelled_at: req.body.cancelled_at,
-		    patient_mobile_number: req.body.patient_mobile_number
+		            patient_mobile_number: req.body.patient_mobile_number
 
             }
         }],

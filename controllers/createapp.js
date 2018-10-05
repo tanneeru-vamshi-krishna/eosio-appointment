@@ -23,8 +23,12 @@ class Createapp {
                     appointment_ID_str: req.body.appointment_ID_str,
                     start_time: req.body.start_time,
                     end_time: req.body.end_time,
-		    doc_mobile_number: req.body.doc_mobile_number,
-		    patient_mobile_number: req.body.patient_mobile_number
+		            doc_mobile_number: req.body.doc_mobile_number,
+                    patient_mobile_number: req.body.patient_mobile_number,
+                    doctor_name: req.body.doctor_name,
+                    Patient_name: req.body.Patient_name
+                    
+                    
 
             }
         }],
