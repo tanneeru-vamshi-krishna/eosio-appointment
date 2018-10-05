@@ -27,7 +27,9 @@ void UISappoint::createapp (account_name created_by,
                             uint64_t     start_time,
                             uint64_t     end_time,
                             uint64_t     doc_mobile_number,
-                            uint64_t     patient_mobile_number){
+                            uint64_t     patient_mobile_number,
+                            string       doctor_name,
+                            string       patient_name){
 
     require_auth(created_by);
 
@@ -58,6 +60,9 @@ void UISappoint::createapp (account_name created_by,
         t.status=0;
         t.doc_mobile_number = doc_mobile_number;
         t.patient_mobile_number = patient_mobile_number;
+        t.doctor_name= doctor_name;
+        t.patient_name=patient_name;
+
     });
     print(appointment_ID,"  appointment is created");    
 }          
@@ -110,20 +115,3 @@ void UISappoint::endapp(string appointment_ID_str,
 
 }
 
-// std::string UISappoint::getapp(string appointment_ID_str){
-
-//     // struct uishospapp dummy;
-
-//     require_auth(_self);
-    
-//     uint64_t appointment_ID = stringToHash(appointment_ID_str);
-
-//     hospapp_table uishospapp(_self,_self);
-    
-//     auto itr = uishospapp.find(appointment_ID);
-
-//     eosio_assert(itr == uishospapp.end(), "appointment doesn't exsists")
-
-//     return "Hello";
-
-// }

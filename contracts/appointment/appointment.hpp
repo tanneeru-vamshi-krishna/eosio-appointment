@@ -26,7 +26,9 @@ class UISappoint:public contract{
                         uint64_t      start_time,
                         uint64_t      end_time,
                         uint64_t      doc_mobile_number,
-                        uint64_t      patient_mobile_number);
+                        uint64_t      patient_mobile_number,
+                        string        doctor_name,
+                        string        patient_name);
 
         //@abi action
         // std::string getapp (string appointment_ID_str);
@@ -57,20 +59,25 @@ class UISappoint:public contract{
             uint64_t     end_time;
             uint64_t     patient_ID;
             string       patient_ID_str;
-            uint8_t      status;                 //   equals 0,1,-1 for in progress, completed and cancelled respectively
+            uint64_t      status;                 //   equals 0,1,-1 for in progress, completed and cancelled respectively
             account_name cancelled_by;
             uint64_t     cancelled_at;
             account_name completed_by;
             uint64_t     completed_at;
             uint64_t     doc_mobile_number;
-            uint64_t     patient_mobile_number; 
+            uint64_t     patient_mobile_number;
+            string       doctor_name;
+            string       patient_name; 
 
             uint64_t primary_key() const {return appointment_ID;}
 
-            EOSLIB_SERIALIZE(uishospapp, (created_by)(created_at) (doctor_ID)(doctor_ID_str) (appointment_ID_str) (appointment_ID) (start_time) (end_time) (patient_ID) (patient_ID_str) (status)(cancelled_by)(cancelled_at)(completed_by)(completed_at)(doc_mobile_number)(patient_mobile_number))
+            uint64_t  secondary_key() const {return status;}
+            
+
+            EOSLIB_SERIALIZE(uishospapp, (created_by)(created_at) (doctor_ID)(doctor_ID_str) (appointment_ID_str) (appointment_ID) (start_time) (end_time) (patient_ID) (patient_ID_str) (status)(cancelled_by)(cancelled_at)(completed_by)(completed_at)(doc_mobile_number)(patient_mobile_number)(doctor_name)(patient_name))
         };
 
-        typedef eosio::multi_index<N(uishospapp), uishospapp> hospapp_table;
+        typedef eosio::multi_index<N(uishospapp), uishospapp , indexed_by<N(status), const_mem_fun<uishospapp, uint64_t, &uishospapp::secondary_key>> > hospapp_table;
 
         uint64_t stringToHash(string str);
 };
