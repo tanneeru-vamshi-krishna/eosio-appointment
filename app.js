@@ -38,10 +38,11 @@ import addpatient from './routes/addpatient';
 import addtimeslot from './routes/addtimeslot';
 import assigndoc from './routes/assigndoc';
 import get_table_rows from './routes/gettablerows'
+import doctorbyid from './routes/doctorbyid'
+
 
 
 app.use('/gettablerows', get_table_rows)
-//app.use('/wallet-unlock', wallet_unlock)
 app.use('/createapp', createapp)
 app.use('/cancelapp', cancelapp)
 app.use('/endapp', endapp)
@@ -52,6 +53,8 @@ app.use('/adddoctor', adddoctor)
 app.use('/addpatient', addpatient)
 app.use('/addtimeslot', addtimeslot)
 app.use('/assigndoc', assigndoc)
+app.use('/doctorbyid', doctorbyid)
+
 
 
 server.listen('5000', () => {

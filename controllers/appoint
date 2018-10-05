@@ -1,0 +1,24 @@
+http://178.62.92.215:5000/createapp
+
+created_by:appoint
+created_at:epoch number
+aadhaar_str:
+doctor_ID_str:
+hospital_ID_str:
+appointment_ID_str:epoch number
+start_time:epoch number
+end_time: epoch number
+
+
+http://178.62.92.215:5000/cancelapp
+
+appointment_ID_str: epoch number
+cancelled_by: appoint
+cancelled_at: epoch number
+
+
+http://178.62.92.215:5000/endapp
+
+appointment_ID_str: epoch number
+terminated_by: appoint
+terminated_at: epoch number
