@@ -1,9 +1,8 @@
-import accountConfig from '../accountconfig'
 import eos from '../config'
 
 class Doctorbyid {
 
-    getById (req,res) {
+    doctorbyid (req,res) {
         let data = {
             scope: req.body.scope,
             code: req.body.scope,
@@ -14,9 +13,9 @@ class Doctorbyid {
             key_type: 'i64',
             index_position: 2
         }
-        if (req.body.doctor_Id) {
-            data.lower_bound = parseInt(req.body.category)
-            data.upper_bound = parseInt(req.body.doctor_ID) + 1
+        if (req.body.status) {
+            data.lower_bound = parseInt(req.body.status)
+            data.upper_bound = parseInt(req.body.status) + 1
         }
 
         eos.getTableRows(data, (error, data) => {
